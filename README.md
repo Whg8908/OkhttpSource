@@ -392,7 +392,7 @@ public static void main(String[] args) {
 
 而OkHttp中的`getResponseWithInterceptorChain()`中经历的流程为
 
-![拦截器责任链](img/拦截器责任链.png)
+![拦截器责任链](./img/拦截器责任链.png)
 
 请求会被交给责任链中的一个个拦截器。默认情况下有五大拦截器：
 
@@ -746,7 +746,7 @@ private Request followUpRequest(Response userResponse) throws IOException {
 
 > 假设存在max-age=100，min-fresh=20。这代表了用户认为这个缓存的响应，从服务器创建响应 到 能够缓存使用的时间为100-20=80s。但是如果max-stale=100。这代表了缓存有效时间80s过后，仍然允许使用100s，可以看成缓存有效时长为180s。
 
-![缓存控制](img/缓存控制.png)
+![缓存控制](./img/缓存控制.png)
 
 
 
