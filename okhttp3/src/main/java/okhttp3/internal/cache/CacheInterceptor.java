@@ -145,9 +145,11 @@ public final class CacheInterceptor implements Interceptor {
                     networkRequest)) {
                 // Offer this request to the cache.
                 CacheRequest cacheRequest = cache.put(response);
+                //WHG 下面的方法主要进行reponse的body缓存
                 return cacheWritingResponse(cacheRequest, response);
             }
 
+            //WHG 如果不是get，进行删除
             if (HttpMethod.invalidatesCache(networkRequest.method())) {
                 try {
                     cache.remove(networkRequest);
